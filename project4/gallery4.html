@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CMST 386 - Kiara Street</title>
+<meta charset="ut-8">
+<meta name="keywords" content="CMST 386, Kiara Street, project4">
+<meta name="description" content="Home page project 4">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <div class="top">
+    <div class="bar white padding card" style="letter-spacing:4px;">
+      <a href="../project4.html" class="bar-item button">Food For the Soul</a>
+      <div class="box">
+        <ul type= "none">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../project1/project1.html">Project 1</a>
+            <ul>
+              <li><a href="../project1/gallery.html">Gallery</a></li>
+            </ul>
+        </li>
+        <li><a href="../project2/street_project2proposal.html">Project 2</a></li>
+        <li><a href="../project3/project3.html">Project 3</a>
+            <ul>
+              <li><a href="../project3/preprocessing.html">Preprocessing</a></li>
+            </ul>
+        <li><a href="../project4/project4.html">Project 4</a>
+          <ul>
+            <li><a href="../project4/gallery4.html">Gallery</a></li>
+            <li><a href="../project4/about.html">About Page</a></li>
+            <li><a href="../project4/menus.html">Menu</a>
+             <ul>
+               <li><a href="../project4/breakfast.html">Breakfast</a></li>
+               <li><a href="../project4/lunch.html">Lunch</a></li>
+               <li><a href="../project4/dessert.html">Dessert</a></li>
+               <li><a href="../project4/drinks.html">Drinks</a></li>
+             </ul>
+            </li>
+          <li><a href="../project4/events.html">Events</a></li>
+          <li><a href="../project4/contacts.html">Contacts</a></li>
+        </ul>
+       </li>
+      </ul>
+      </div>
+</div>
+</div>
+
+<!-- Header -->
+<div class="header" id="myHeader">
+  <h1>Image Grid</h1>
+  <p>Click on the buttons to change the grid view.</p>
+  <button class="btn" onclick="one()">1</button>
+  <button class="btn active" onclick="two()">2</button>
+  <button class="btn" onclick="three()">3</button>
+</div>
+
+<!-- Photo Grid -->
+<div class="row">
+  <div class="column">
+    <img src="../project4/imgs/food.jpg" style="width:100%">
+    <img src="../project4/imgs/chicken_n_waffles.jpg" style="width:100%">
+    <img src="../project4/imgs/chicken_sandwiches.jpg" style="width:100%">
+    <img src="../project4/imgs/chefplate.jpg" style="width:100%">
+  </div>
+</div>
+
+<script>
+// Get the elements with class="column"
+var elements = document.getElementsByClassName("column");
+
+// Declare a loop variable
+var i;
+
+// Full-width images
+function one() {
+    for (i = 0; i < elements.length; i++) {
+    elements[i].style.msFlex = "100%";  // IE10
+    elements[i].style.flex = "100%";
+  }
+}
+
+// Two images side by side
+function two() {
+  for (i = 0; i < elements.length; i++) {
+    elements[i].style.msFlex = "50%";  // IE10
+    elements[i].style.flex = "50%";
+  }
+}
+
+// Four images side by side
+function four() {
+  for (i = 0; i < elements.length; i++) {
+    elements[i].style.msFlex = "25%";  // IE10
+    elements[i].style.flex = "25%";
+  }
+}
+
+// Add active class to the current button (highlight it)
+var header = document.getElementById("myHeader");
+var btns = header.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+
+
+</body>
+</html>
