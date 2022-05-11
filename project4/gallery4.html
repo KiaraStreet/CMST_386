@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CMST 386 - Kiara Street</title>
+<meta charset="utf-8">
+<meta name="keywords" content="CMST 386, Kiara Street, project4">
+<meta name="description" content="Home page project 4">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <h1>Gallery Page</h1>
+</header>
+
+  <div class="navbar">
+    <a href="../index.html" class="active">Home</a>
+    <div class="dropdown">
+      <button class="dropbtn">Project 1
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="../project1/project1.html">Project 1</a>
+        <a href="../project1/gallery.html">Gallery</a>
+      </div>
+    </div>
+    <a href="../project2/street_project2proposal.html">Project 2</a>
+    <div class="dropdown">
+      <button class="dropbtn"> Project 3
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+    <a href="../project3/project3.html">Project 3</a>
+    <a href="../project3/preprocessing.html">Preprocessing</a>
+  </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropbtn" a href="../project4/project4.html">Project 4</a>
+      <i class="fa fa-caret-down"></i>
+  </button>
+
+    <div class="dropdown-content">
+      <a href="../project4/project4.html">Project 4 Homepage</a>
+    <a href="../project4/about.html">About</a>
+    <a href="../project4/breakfast.html">Breakfast Menu</a>
+    <a href="../project4/lunch.html">Lunch Menu</a>
+    <a href="../project4/dessert.html">Dessert Menu</a>
+    <a href="../project4/drinks.html">Drinks Menu</a>
+    <a href="../project4/events.html">Events Menu</a>
+    <a href="../project4/gallery4.html">Gallery Menu</a>
+    <a href="../project4/contact.html">Contacts Page</a>
+
+  </div>
+  </div>
+
+    <div class="row">
+      <div class="column">
+        <img class="demo cursor" src="../project4/imgs/food.jpg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../project4/imgs/chicken_n_waffles.jpg" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../project4/imgs/chicken_sandwiches.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="../project4/imgs/chefplate.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+      </div>
+    </div>
+  </div>
+
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+
+
+</body>
+</html>
